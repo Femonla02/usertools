@@ -1,0 +1,79 @@
+<!-- saved from url=(0035)https://usertools.rcn.com/index.cgi -->
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <script src="./browser.js.download" type="text/javascript" language="JavaScript"></script>
+  <script language="JavaScript" type="text/javascript">
+    if (navigator.appName == "Netscape") {
+      document.write('<link rel=stylesheet href="/templates/usertools/NSmain.css" type="text/css">'); 
+    } else {
+      document.write('<link rel=stylesheet href="/templates/usertools/main.css" type="text/css">');
+    }
+  </script>
+  <link rel="stylesheet" href="./NSmain.css" type="text/css">
+  <title>Usertools</title>
+  <script type="text/javascript">
+    function validateLogin(event) {
+      const username = document.forms["loginForm"]["username"].value.trim();
+      const password = document.forms["loginForm"]["password"].value.trim();
+
+      // Check if username or password is empty
+      if (!username || !password) {
+        alert("Both username and password are required.");
+        event.preventDefault(); // Prevent form submission
+        return false;
+      }
+
+      // Further validation logic can be added here
+      // Example: Minimum length requirement
+      if (username.length < 3 || password.length < 6) {
+        alert("Username must be at least 3 characters and password at least 6 characters long.");
+        event.preventDefault(); // Prevent form submission
+        return false;
+      }
+
+      return true; // Allow form submission
+    }
+  </script>
+</head>
+
+<body bgcolor="white" text="black" alink="#CC0000" vlink="#CC0000" link="#CC0000">
+
+<!--
+<font face=arial size=4 color=#CC3300>USERTOOLS</font>
+-->
+<span class="Black">
+  <b>USERTOOLS</b>
+  <hr noshade="">
+  Welcome to Usertools!
+  <p>
+    This system will allow you to change your password, see how much disk space your email box and personal webspace are using, and configure your mail aliases. 
+    To begin, you must first login with your username and password.
+  </p>
+  <p>This system may be used by customers of RCN, Erol's, and Starpower.</p>
+  <p><b>NOTE:</b> Your browser must have cookies enabled to use this system.</p>
+
+  <form method="post" action="/login" name="loginForm" onsubmit="validateLogin(event)">
+    <input type="hidden" name="stage" value="login">
+    <input type="hidden" name="isp" value="rcn.com">
+    <table border="0" cellpadding="0" bgcolor="#efefef">
+      <tbody>
+        <tr>
+          <td><span class="Black">Username:</span></td>
+          <td><span class="Black"><input type="text" name="username"></span></td>
+        </tr>
+        <tr>
+          <td><span class="Black">Password:</span></td>
+          <td><span class="Black"><input type="password" name="password"></span></td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      <input type="submit" value="Login">
+    </p>
+  </form>
+  <hr noshade="">
+</span>
+
+</body>
+</html>
